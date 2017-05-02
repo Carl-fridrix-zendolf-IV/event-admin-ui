@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>РН Банк - Администрирование</title>
+        <base href="/">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="manifest" href="manifest.json">
+
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en"></script>
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+        <script>
+            var OneSignal = window.OneSignal || [];
+            OneSignal.push(["init", {
+                appId: "64d8fe8f-fbeb-449d-a436-5871207b5081",
+                autoRegister: true,
+                notifyButton: {
+                    enable: false /* Set to false to hide */
+                }
+            }]);
+        </script>
+    </head>
+    <body>
+        <my-app></my-app>
+    </body>
+</html>

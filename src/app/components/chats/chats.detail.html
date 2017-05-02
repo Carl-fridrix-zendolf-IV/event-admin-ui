@@ -1,0 +1,35 @@
+<div class="page">
+    <div class="header">
+        <div class="header-item left">
+            <img style="display: block" src="./assets/icons/ic_keyboard_arrow_left_black_24px.svg">
+            <span style="display: block" onclick="return history.back()">Назад</span>
+        </div>
+        <h1 class="header-item center">Чат</h1>
+        <div class="header-item right"></div>
+    </div>
+
+    <div class="content">
+
+        <div class="text-center" *ngIf="!messages">
+            <img src="./assets/icons/default.svg">
+        </div>
+
+        <div class="messages-container" #messagesContainer>
+            <div class="message" *ngFor="let message of messages">
+                <h4 [ngClass]="{'speaker': message.sender_info[0]?.speaker}">{{message.sender_info[0]?.name.firstname}} {{message.sender_info[0]?.name.lastname}}</h4>
+                <p>
+                    {{message.message}}
+                </p>
+            </div>
+        </div>
+        <div class="input-container">
+            <textarea [(ngModel)]="message" class="input-field"></textarea>
+            <button *ngIf="!loading" class="app_button" (click)="sendMessage();" [disabled]="!message">
+                <img src="./assets/icons/ic_send_white_36px.svg" alt="">
+            </button>
+            <div class="text-center" *ngIf="loading">
+                <img style="width: 50%;" src="./assets/icons/default.svg">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="page">
+    <div class="header">
+        <div class="header-item left">
+            <img style="display: block" src="./assets/icons/ic_keyboard_arrow_left_black_24px.svg">
+            <span style="display: block" onclick="return history.back()">Назад</span>
+        </div>
+        <h1 class="header-item center">Список вопросов</h1>
+        <div class="header-item right"></div>
+    </div>
+
+    <div class="content">
+
+        <div class="overlay" *ngIf="showPopup">
+            <div class="popup">
+                <div class="select-container">
+                    <select [(ngModel)]="speaker">
+                        <option value="0">Выберите спикера</option>
+                        <option *ngFor="let sp of speakers" [ngValue]="sp._id">
+                            {{sp.name.firstname}} {{sp.name.lastname}}
+                        </option>
+                    </select>
+
+                    <button class="app_button" (click)="selectSpeaker()">Выбрать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button class="app_button" (click)="loadChatsList()" [disabled]="!chats">обновить</button>
+        </div>
+
+        <div class="text-center" *ngIf="!chats">
+            <img src="./assets/icons/default.svg" style="width: 50px;">
+        </div>
+
+        <div *ngIf="chats">
+            <div class="item" *ngFor="let chat of chats" (click)="openChat(chat)">
+                <div class="left">
+                    <h4>{{chat.sender_info[0].name.firstname}} {{chat.sender_info[0].name.lastname}}</h4>
+                    <br/>
+                    <span class="time">{{chat.timestamp | date:"dd/MM/yy HH:mm" }}</span>
+                </div>
+                <div class="right">
+                    <img src="./assets/icons/ic_keyboard_arrow_right_black_24px.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="page">
+    <div class="header">
+        <div class="header-item left">
+                <img style="display: block" src="./assets/icons/ic_keyboard_arrow_left_black_24px.svg">
+                <span style="display: block" onclick="return history.back()">Назад</span>
+        </div>
+        <h1 class="header-item center">Пользователи</h1>
+        <div class="header-item right"></div>
+    </div>
+
+    <div class="content">
+
+        <div class="text-center">
+            <button class="app_button" (click)="loadUsersList()" [disabled]="!users">обновить</button>
+            <a href="https://digital-wall.herokuapp.com/api/public/v1/download/users" target="_blank" class="app_button">Скачать Excel</a>
+        </div>
+
+        <div class="text-center" *ngIf="!users">
+            <img src="./assets/icons/default.svg" style="width: 50px;">
+        </div>
+
+        <div *ngIf="users">
+            <div class="item" *ngFor="let user of users;">
+                <div class="left">
+                    <h4>{{user.name?.firstname}} {{user.name?.lastname}}</h4>
+                    <br/>
+                    <span class="time">{{user.createAt | date:"dd.MM.yy HH:mm" }}</span>
+                </div>
+                <div class="right">
+                    <img src="./assets/icons/ic_done_black_24px.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

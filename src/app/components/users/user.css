@@ -1,0 +1,21 @@
+.item {
+    padding: 30px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #757575;
+}
+
+.item .left h4 {
+    font-size: 21px;
+    font-weight: bold;
+}
+.item .left span {
+    padding: 7px;
+    background: #757575;
+    color: #fff;
+}
+.item .right img {
+    width: 35px;
+}

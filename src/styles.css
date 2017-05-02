@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+    font-family: sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.app_button {
+    margin: 15px 15px;
+    background: rgb(255, 167, 38);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    padding: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    max-width: 300px;
+    text-align: center;
+    display: inline-block;
+}
+.app_button:disabled {
+    opacity: .5;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.white {
+    color: #FFF !important;
+}
+.error {
+    color: #F44336 !important;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+}
+.page .header {
+    height: 50px;
+
+    border-bottom: 1px solid #BDBDBD;
+    background: #fff;
+
+    text-align: center;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.page .header .header-item.left {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.page .header .header-item.center {
+    width: 70%;
+}
+.page .header .header-item.right {
+    width: 15%;
+}
+.page .header h1 {
+    /*width: 40%;*/
+
+    font-size: 25px;
+
+    text-align: center;
+    font-weight: 100;
+    color: $global-headers-color;
+
+    margin: auto;
+
+    border-bottom: 4px solid $global-main-color;
+}
+
+.page .content {
+    max-width: 1024px;
+    margin: auto;
+}

@@ -1,0 +1,77 @@
+.content {
+    position: relative;
+}
+
+.item {
+    padding: 30px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #757575;
+}
+
+.item .left h4 {
+    font-size: 21px;
+    font-weight: bold;
+}
+.item .left span {
+    padding: 7px;
+    background: #757575;
+    color: #fff;
+}
+.item .right img {
+    width: 35px;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 5;
+
+    background: rgba(255,255,255, 0.9);
+}
+
+.overlay .popup {
+    width: 300px;
+
+    margin: auto;
+    text-align: center;
+
+    padding: 25px;
+}
+
+.overlay .popup .select-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 0px;
+    overflow: hidden;
+}
+
+.overlay .popup .select-container select {
+    padding: 15px 10px;
+    margin-bottom: 10px;
+
+    width: 100%;
+
+    border: 2px solid #eee;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    background-color: rgb(249,145,0);
+    background-image: none;
+
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
